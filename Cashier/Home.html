@@ -36,7 +36,7 @@
           </form>
 
 
-
+<a href=""></a>
         </div>
       </div>
       </div>
@@ -86,7 +86,7 @@
         var price = document.getElementById('price').value;
         var quantity = document.getElementById('quantity').value;
         var discount = document.getElementById('discount').value;
-        var total = price*quantity*(100-discount);
+        var total = (price*quantity*(100-discount))/100;
 
         document.form.total.value=total;
 
