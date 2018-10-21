@@ -1,3 +1,3 @@
 # CashierProgram
 
-<a href="cashier/homt.html"> Cashier Program</a>
+<a href="Cashier/home.html"> Cashier Program</a>
