@@ -1,0 +1,38 @@
+body {
+	background-color: white;
+}
+
+div.row{
+	background: #ddd;
+}
+
+input.btn{
+	height:100px;
+	width: 250px;
+	border-color: #333;
+	background-color: #aaa;
+	margin: 10px;
+
+}
+input.form-control{
+	margin: 10px;
+
+}
+
+h2{
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+h1.jumbotron{
+	height:100px;
+}
+
+input.btn-success{
+	margin-left:15px;
+}
+
+.row2{
+	padding: 20px;
+}
+

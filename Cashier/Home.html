@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <h1 class="jumbotron" align="">Cashier</h1>
+
+    <div class=row>
+      <div class=col-sm-4>
+        <div class="boxed">
+        <div class=container>
+          <form name="form">
+          <h2>Item :</h2>
+          <input type="text"    class="form-control" name="item"><br>
+          <h2>Price :</h2>
+          <input type="text" class="form-control" name="price" id="price"><br>
+          <h2>Quantity :</h2>
+          <input type="number"  class="form-control" name="quantity" id="quantity" min=1><br>
+          <h2>Discount (%): </h2>  
+          <input type="number" class="form-control" name="discount" id="discount" max=100>
+
+          <input type="button" class="btn-success" value="Calculate" onclick="calculate()"><br>
+
+          <h2>Total :</h2>
+          <input type="text" class="number form-control" name="total" id="total"><br>
+          </form>
+
+
+
+        </div>
+      </div>
+      </div>
+
+      <div class=col-8>
+        <h1>Popular Menu  </h1>
+        <input type="button" class="btn btn-light" onclick="insert('10000','Espresso')" value="Espresso">
+        <input type="button" class="btn btn-light" onclick="insert('20000','Cafee Latte')" value="Cafee Latte">
+        <input type="button" class="btn btn-light" onclick="insert('17000','Cappucino')" value="Cappucino">
+        <input type="button" class="btn btn-light" onclick="insert('15000','Mocaccino')" value="Mocaccino">
+     
+        <input type="button" class="btn btn-light" onclick="insert('13000','Americano')" value="Americano">
+        <input type="button" class="btn btn-light" onclick="insert('20000','Chocolate')" value="Chocolate">
+        <input type="button" class="btn btn-light" onclick="insert('10000','Fresh Brew')" value="Fresh Brew">
+        <input type="button" class="btn btn-light" onclick="insert('15000','Cold Brew')" value="Cold Brew">
+      </div>
+
+
+      </div>
+
+      <form name="form2">
+        <div class="col-4 offset-2">
+        
+        <h2>Cash : </h2><input type="number" class="form-control" name="cash" id="cash">
+        <input type="button" class="btn-success" value="Enter" onclick="enter()">
+        <h2>Reminder : </h2>  <input type="text" class="form-control" name="reminder" id="reminder">
+
+      </div>
+
+      </form>
+
+    </div>
+
+
+
+   
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      function insert(num,text){
+        document.form.price.value =num;
+        document.form.item.value = text;
+      };
+
+      function calculate(){
+        var price = document.getElementById('price').value;
+        var quantity = document.getElementById('quantity').value;
+        var discount = document.getElementById('discount').value;
+        var total = price*quantity*(100-discount);
+
+        document.form.total.value=total;
+
+      };
+
+      function enter(){
+        var total = document.getElementById('total').value;
+        var cash = document.getElementById('cash').value;
+        var reminder = cash-total;
+
+        document.form2.reminder.value = reminder;
+      }
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
